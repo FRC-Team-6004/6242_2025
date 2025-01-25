@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "TopBlueToCoral"
+            "pathName": "test1"
           }
         },
         {
@@ -17,21 +17,15 @@
           }
         },
         {
-          "type": "wait",
+          "type": "named",
           "data": {
-            "waitTime": 3.0
+            "name": "printme"
           }
         },
         {
           "type": "named",
           "data": {
             "name": "Stop Intake"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "ToCorner"
           }
         }
       ]
