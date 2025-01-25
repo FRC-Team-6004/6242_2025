@@ -70,7 +70,7 @@ public class IntakeSubsystem extends SubsystemBase {
         intakeBack.set(-speed);
         intakeMiddle.set(speed);
         System.out.println("Intake");
-
+        DriverStation.reportError("Roll", false);
     } 
 
     public void rollStop() {
@@ -78,7 +78,7 @@ public class IntakeSubsystem extends SubsystemBase {
         intakeBack.set(0);
         intakeMiddle.set(0);
         System.out.println("Stop Intake");
-
+        DriverStation.reportError("Roll Stop", false);
     //    System.out.println("STOP");
     }
 
