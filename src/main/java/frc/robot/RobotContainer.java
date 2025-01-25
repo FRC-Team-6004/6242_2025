@@ -11,7 +11,6 @@ import com.ctre.phoenix6.swerve.SwerveRequest;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
-import com.pathplanner.lib.events.EventTrigger;
 import com.pathplanner.lib.path.PathPlannerPath;
 
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -50,17 +49,18 @@ public class RobotContainer {
 
     public RobotContainer() {
         
-        //smart dashboard for Auto paths
-        autoChooser = AutoBuilder.buildAutoChooser("Tests");
-        SmartDashboard.putData("Auto Mode", autoChooser);
+        
         
         //commands for use in auto
         // Register Named Commands
         NamedCommands.registerCommand("Intake", new InstantCommand(() -> intakeSubsystem.roll(.70)));
         NamedCommands.registerCommand("Stop Intake", new InstantCommand(() -> intakeSubsystem.rollStop()));
-        NamedCommands.registerCommand("printme", Commands.print("This is command"));
+        
 
-        new EventTrigger("exampleevent").onTrue(Commands.print("Passed an event marker"));
+        //smart dashboard for Auto paths
+        autoChooser = AutoBuilder.buildAutoChooser("Tests");
+        SmartDashboard.putData("Auto Mode", autoChooser);
+        
         configureBindings();
     }
 
